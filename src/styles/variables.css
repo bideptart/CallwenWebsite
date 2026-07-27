@@ -1,0 +1,121 @@
+/* ═══════════════════════════════════════════════════════════════
+   CALLWEN DESIGN SYSTEM — CSS Variables / Design Tokens
+   Teloz.com exact design system (Orange #fd7a03 + Teloz Blue #0684bc)
+   Fully responsive design scale for Mobile, Tablet, Desktop
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+  /* ── Brand Colors (Teloz.com Exact Specs) ─────────────────── */
+  --color-primary-blue: #0684bc;      /* Teloz Blue — Secondary accent, logo blue, links, highlights */
+  --color-primary-blue-hover: #056fa0;/* Darker blue hover state */
+  --color-primary-blue-light: #e6f4fa;/* Light blue tint background */
+
+  --color-accent-orange: #fd7a03;    /* Teloz Orange — Primary accent, CTAs, power highlights */
+  --color-accent-orange-hover: #e06c02;/* Darker orange hover state */
+  --color-accent-orange-light: #fff7ed;/* Light warm orange tint for badges */
+  --color-accent-orange-border: #fed7aa;/* Soft orange border */
+
+  /* ── Canvas & Surface ─────────────────────────────────────── */
+  --color-bg-primary: #fffbf7;        /* Warm light background canvas (Teloz signature) */
+  --color-bg-white: #ffffff;          /* Pure white for cards & surfaces */
+  --color-bg-secondary: #fff7ed;      /* Warm alternate section background */
+  --color-bg-tertiary: #fef3e7;       /* Muted surface */
+  --color-bg-dark: #111111;           /* Dark sections (footer, CTA) */
+  --color-bg-dark-card: #1a1a1a;      /* Dark card surfaces */
+
+  /* ── Text Colors ─────────────────────────────────────────── */
+  --color-text-primary: #1e293b;      /* Slate dark headings and body text */
+  --color-text-secondary: #6c757d;    /* Muted text, captions */
+  --color-text-muted: #94a3b8;        /* Subtle labels */
+  --color-text-on-dark: #fffbf7;      /* Text on dark backgrounds */
+  --color-text-on-dark-muted: #94a3b8; /* Muted text on dark bg */
+
+  /* ── Semantic Colors ─────────────────────────────────────── */
+  --color-success: #10b981;           /* Green checkmarks, positive states */
+  --color-success-bg: #ecfdf5;        /* Green badge background */
+  --color-purple: #8b5cf6;            /* Accent purple */
+  --color-error: #ef4444;
+
+  /* ── Border & Dividers ───────────────────────────────────── */
+  --color-border: #fed7aa;            /* Warm soft border */
+  --color-border-subtle: #f1f5f9;     /* Subtle divider */
+  --color-border-dark: rgba(255, 255, 255, 0.12);
+
+  /* ── Shadows (Color-tinted Chromatic Elevation) ────────── */
+  --shadow-sm: 0 1px 3px rgba(6, 132, 188, 0.06);
+  --shadow-md: 0 4px 12px rgba(6, 132, 188, 0.08);
+  --shadow-lg: 0 8px 30px rgba(6, 132, 188, 0.1);
+  --shadow-card: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(253, 122, 3, 0.05) 0px 20px 25px -5px, rgba(6, 132, 188, 0.05) 0px 8px 10px -6px;
+  --shadow-card-hover: rgba(253, 122, 3, 0.15) 0px 12px 32px -4px, rgba(6, 132, 188, 0.12) 0px 4px 16px -2px;
+  --shadow-navbar: 0 2px 12px rgba(6, 132, 188, 0.06);
+  --shadow-glow-orange: 0 0 24px rgba(253, 122, 3, 0.25);
+  --shadow-glow-blue: 0 0 24px rgba(6, 132, 188, 0.25);
+
+  /* ── Typography (Geist + Plus Jakarta Sans + Inter) ────── */
+  --font-heading: 'Plus Jakarta Sans', 'Geist', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', 'Geist', system-ui, sans-serif;
+
+  /* Font Sizes (Fluid Scale) */
+  --text-xs: clamp(0.7rem, 1vw, 0.75rem);      /* 11-12px */
+  --text-sm: clamp(0.8rem, 1.2vw, 0.875rem);   /* 13-14px */
+  --text-base: clamp(0.938rem, 1.5vw, 1rem);   /* 15-16px */
+  --text-lg: clamp(1rem, 2vw, 1.125rem);       /* 16-18px */
+  --text-xl: clamp(1.125rem, 2.2vw, 1.25rem);  /* 18-20px */
+  --text-2xl: clamp(1.25rem, 2.5vw, 1.5rem);   /* 20-24px */
+  --text-3xl: clamp(1.5rem, 3vw, 1.875rem);    /* 24-30px */
+  --text-4xl: clamp(1.875rem, 4vw, 2.25rem);   /* 30-36px */
+  --text-5xl: clamp(2.25rem, 5vw, 3rem);       /* 36-48px */
+  --text-6xl: clamp(2.75rem, 6vw, 3.75rem);    /* 44-60px */
+
+  /* Font Weights */
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  --font-extrabold: 800;
+
+  /* Line Heights */
+  --leading-tight: 1.15;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.7;
+
+  /* Spacing */
+  --space-1: 5px;
+  --space-2: 10px;
+  --space-3: 15px;
+  --space-4: 20px;
+  --space-5: 25px;
+  --space-6: 30px;
+  --space-8: 40px;
+  --space-10: 50px;
+  --space-12: 60px;
+  --space-16: 80px;
+  --space-20: 100px;
+
+  /* Layout */
+  --container-max: 1200px;
+  --container-px: 24px;
+  --navbar-height: 72px;
+
+  /* Border Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
+
+  /* Z-Index */
+  --z-navbar: 1000;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --container-px: 16px;
+    --navbar-height: 64px;
+  }
+}

@@ -1,0 +1,37 @@
+.homepage {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.hero-skeleton {
+  padding: 80px 0;
+  text-align: center;
+}
+
+.hero-skeleton__actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 640px) {
+  .hero-skeleton {
+    padding: 48px 0;
+  }
+
+  .hero-skeleton__actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-skeleton__actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
