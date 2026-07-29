@@ -1,0 +1,270 @@
+/* ==========================================================================
+   PRE-FOOTER CTA SECTION - TELOZ DESIGN SYSTEM STYLES
+   ========================================================================== */
+
+.pfcSection {
+  width: 100%;
+  padding: 60px 0 90px;
+  background: #fffbf7;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Banner Container */
+.pfcContainer {
+  position: relative;
+  border-radius: 28px;
+  border: 1.5px solid rgba(253, 122, 3, 0.35);
+  background: linear-gradient(135deg, #ffffff 0%, #fff7ed 50%, #ffffff 100%);
+  padding: 48px 40px;
+  box-shadow:
+    0 20px 50px -10px rgba(253, 122, 3, 0.15),
+    0 0 0 1px rgba(253, 122, 3, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 28px;
+}
+
+/* Background Ambient Glow */
+.pfcContainer::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: rgba(253, 122, 3, 0.12);
+  filter: blur(50px);
+  pointer-events: none;
+}
+
+/* Top Pill Tag */
+.pfcPillTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  border: 1px solid #fed7aa;
+  background: #ffffff;
+  color: #fd7a03;
+  font-family: 'Geist Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 12px rgba(253, 122, 3, 0.08);
+}
+
+/* Header Content */
+.pfcContent {
+  max-width: 680px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.pfcTitle {
+  margin: 0;
+  font-family: var(--font-heading, 'Geist', sans-serif);
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -1.4px;
+  color: #1e293b;
+}
+
+.pfcTitleEm {
+  font-style: italic;
+  color: #fd7a03;
+}
+
+.pfcSubtitle {
+  margin: 0;
+  font-family: var(--font-body, 'Geist', sans-serif);
+  font-size: clamp(1rem, 1.3vw, 1.1rem);
+  font-weight: 400;
+  line-height: 1.65;
+  color: #6c757d;
+}
+
+/* Actions Row */
+.pfcActions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.pfcPrimaryBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #fd7a03, #fc9507);
+  color: #ffffff;
+  font-family: var(--font-body, 'Geist', sans-serif);
+  font-size: 15px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 10px 28px -4px rgba(253, 122, 3, 0.4);
+  transition: all 240ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pfcPrimaryBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px -4px rgba(253, 122, 3, 0.5);
+}
+
+.pfcSecondaryBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 26px;
+  border-radius: 9999px;
+  background: #ffffff;
+  color: #1e293b;
+  font-family: var(--font-body, 'Geist', sans-serif);
+  font-size: 15px;
+  font-weight: 500;
+  border: 1px solid #e2e8f0;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(17, 17, 17, 0.04);
+  transition: all 220ms ease;
+}
+
+.pfcSecondaryBtn:hover {
+  border-color: #fd7a03;
+  color: #fd7a03;
+  transform: translateY(-2px);
+}
+
+/* Value Props Row */
+.pfcPropsRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding-top: 10px;
+  border-top: 1px dashed #fed7aa;
+  width: 100%;
+}
+
+.pfcPropItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-body, 'Geist', sans-serif);
+  font-size: 13px;
+  font-weight: 500;
+  color: #1e293b;
+}
+
+.pfcDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #fd7a03;
+}
+
+/* Live AI Call Modal Simulation Overlay */
+.pfcModalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(17, 24, 39, 0.6);
+  backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: pfc-fade-in 200ms ease;
+}
+
+.pfcModalCard {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 24px;
+  border: 1px solid #fed7aa;
+  background: #ffffff;
+  padding: 32px 24px;
+  box-shadow: 0 24px 60px -12px rgba(17, 17, 17, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  position: relative;
+}
+
+.pfcModalClose {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  color: #6c757d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.pfcCallAura {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #fd7a03, #0684bc);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 28px rgba(253, 122, 3, 0.35);
+}
+
+.pfcCallAura::before,
+.pfcCallAura::after {
+  content: '';
+  position: absolute;
+  inset: -12px;
+  border-radius: 50%;
+  border: 1px solid rgba(253, 122, 3, 0.3);
+  animation: pfc-ring-pulse 2s ease-out infinite;
+}
+
+.pfcCallAura::after {
+  inset: -24px;
+  animation-delay: 0.8s;
+}
+
+@keyframes pfc-ring-pulse {
+  0% { opacity: 0.8; transform: scale(0.8); }
+  100% { opacity: 0; transform: scale(1.3); }
+}
+
+@keyframes pfc-fade-in {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Responsiveness */
+@media (max-width: 640px) {
+  .pfcSection { padding: 40px 0 60px; }
+  .pfcContainer { padding: 32px 20px; gap: 20px; }
+  .pfcTitle { font-size: clamp(1.8rem, 6vw, 2.3rem); }
+  .pfcActions { flex-direction: column; width: 100%; }
+  .pfcPrimaryBtn, .pfcSecondaryBtn { width: 100%; justify-content: center; }
+  .pfcPropsRow { flex-direction: column; align-items: center; }
+}

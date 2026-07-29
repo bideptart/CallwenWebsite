@@ -52,8 +52,8 @@
   --shadow-glow-blue: 0 0 24px rgba(6, 132, 188, 0.25);
 
   /* ── Typography (Geist + Plus Jakarta Sans + Inter) ────── */
-  --font-heading: 'Plus Jakarta Sans', 'Geist', 'Inter', system-ui, sans-serif;
-  --font-body: 'Inter', 'Geist', system-ui, sans-serif;
+  --font-heading: 'Geist', 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  --font-body: 'Geist', 'Inter', system-ui, sans-serif;
 
   /* Font Sizes (Fluid Scale) */
   --text-xs: clamp(0.7rem, 1vw, 0.75rem);      /* 11-12px */

@@ -1,75 +1,142 @@
-/* ═══════════════════════════════════════════════════════════════
-   CALLWEN — Footer Component Styles
-   Multi-column 100% full-width dark footer with centered container
-   ═══════════════════════════════════════════════════════════════ */
+/* ==========================================================================
+   FOOTER COMPONENT STYLES - DARK NAVY CANVAS & TELOZ BRANDING
+   ========================================================================== */
 
 .footer {
   width: 100%;
-  background-color: var(--color-bg-dark);
-  color: var(--color-text-on-dark-muted);
+  background-color: #0b0f17;
+  color: #94a3b8;
   padding: 80px 0 40px;
-  border-top: 1px solid var(--color-border-dark);
+  border-top: 1px solid rgba(254, 215, 170, 0.15);
+  position: relative;
+  font-family: var(--font-body, 'Geist', sans-serif);
 }
 
 .footer__grid {
   display: grid;
   grid-template-columns: 2fr repeat(4, 1fr);
   gap: 40px;
-  margin-bottom: 60px;
+  margin-bottom: 50px;
 }
 
+/* Brand Column */
 .footer__brand-col {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
 }
 
+/* Exact Top Navbar Logo Structure */
 .footer__brand {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-family: var(--font-heading);
-  font-size: 1.5rem;
-  font-weight: var(--font-bold);
-  color: #ffffff;
+  gap: 12px;
   text-decoration: none;
-}
-
-.footer__brand-blue {
-  color: #0684bc;
-}
-
-.footer__brand-orange {
-  color: #fd7a03;
-}
-
-.footer__tagline {
-  font-size: var(--text-sm);
-  color: var(--color-text-on-dark-muted);
-  line-height: var(--leading-relaxed);
-  max-width: 320px;
-}
-
-.footer__teloz-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 12px;
-  background-color: rgba(255, 255, 255, 0.06);
-  border: 1px solid var(--color-border-dark);
-  border-radius: var(--radius-md);
-  font-size: var(--text-xs);
-  color: #fffbf7;
   width: fit-content;
 }
 
-.footer__col-title {
-  font-size: var(--text-sm);
-  font-weight: var(--font-semibold);
+.footer__logo-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer__logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.footer__logo-title {
+  font-family: var(--font-heading, 'Geist', sans-serif);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.footer__logo-blue {
+  color: #0684bc;
+}
+
+.footer__logo-orange {
+  color: #fd7a03;
+}
+
+.footer__logo-sub {
+  font-family: 'Geist Mono', monospace;
+  font-size: 9px;
+  font-weight: 600;
+  color: #64748b;
+  letter-spacing: 0.15em;
+  margin-top: 2px;
+}
+
+.footer__tagline {
+  font-size: 13.5px;
+  color: #94a3b8;
+  line-height: 1.6;
+  max-width: 320px;
+  margin: 0;
+}
+
+/* Customer Dashboard CTA Button */
+.footer__dash-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  border: 1px solid rgba(253, 122, 3, 0.3);
+  background: rgba(253, 122, 3, 0.08);
   color: #ffffff;
+  font-family: var(--font-body, 'Geist', sans-serif);
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  width: fit-content;
+  transition: all 220ms ease;
+}
+
+.footer__dash-btn:hover {
+  background: #fd7a03;
+  border-color: #fd7a03;
+  box-shadow: 0 4px 16px rgba(253, 122, 3, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Live Operational Status Pill */
+.footer__status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  color: #10b981;
+  font-family: 'Geist Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  width: fit-content;
+}
+
+.footer__status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10b981;
+  animation: footer-pulse 2s ease-in-out infinite;
+}
+
+/* Navigation Columns */
+.footer__col-title {
+  font-family: 'Geist Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  color: #f8fafc;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 16px;
+  letter-spacing: 0.1em;
+  margin-bottom: 18px;
 }
 
 .footer__links {
@@ -79,41 +146,68 @@
 }
 
 .footer__link {
-  font-size: var(--text-sm);
-  color: var(--color-text-on-dark-muted);
-  transition: color var(--transition-fast);
+  font-size: 13.5px;
+  color: #94a3b8;
+  text-decoration: none;
+  transition: color 200ms ease, transform 200ms ease;
+  width: fit-content;
 }
 
 .footer__link:hover {
-  color: var(--color-accent-orange);
+  color: #fd7a03;
+  transform: translateX(2px);
 }
 
+/* Bottom Bar */
 .footer__bottom {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-top: 32px;
-  border-top: 1px solid var(--color-border-dark);
-  font-size: var(--text-xs);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 12px;
+  color: #64748b;
   flex-wrap: wrap;
   gap: 16px;
 }
 
 .footer__socials {
   display: flex;
+  align-items: center;
   gap: 16px;
 }
 
 .footer__social-link {
-  color: var(--color-text-on-dark-muted);
-  transition: color var(--transition-fast);
+  color: #64748b;
+  transition: color 200ms ease;
 }
 
 .footer__social-link:hover {
-  color: var(--color-accent-orange);
+  color: #fd7a03;
 }
 
-/* ── Responsive Breakpoints ───────────────────────────────── */
+.footer__human-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #94a3b8;
+  font-family: 'Geist Mono', monospace;
+  font-size: 11.5px;
+}
+
+.footer__human-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #fd7a03;
+}
+
+@keyframes footer-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.75); }
+}
+
+/* Responsiveness */
 @media (max-width: 1024px) {
   .footer__grid {
     grid-template-columns: 1.5fr repeat(2, 1fr);

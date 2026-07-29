@@ -1,0 +1,351 @@
+/* ═══════════════════════════════════════════════════════════════
+   CALLWEN — How It Works (Compact + Rich Animations)
+   ═══════════════════════════════════════════════════════════════ */
+
+.hiw {
+  width: 100%;
+  padding: 0 0 90px;
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Floating particles background */
+.hiw::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(253,122,3,0.04) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(6,132,188,0.04) 0%, transparent 50%),
+    radial-gradient(2px 2px at 15% 20%, rgba(253,122,3,0.2), transparent),
+    radial-gradient(2px 2px at 85% 80%, rgba(6,132,188,0.2), transparent),
+    radial-gradient(1px 1px at 40% 60%, rgba(16,185,129,0.25), transparent);
+  background-size: 100% 100%, 100% 100%, 200px 200px, 220px 220px, 180px 180px;
+  animation: hiw-particles 20s linear infinite;
+  pointer-events: none;
+}
+
+.hiw__strip {
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #fd7a03 0%, #0684bc 50%, #10b981 100%);
+  margin: 0;
+}
+
+/* ── Header ──────────────────────────────────────────────── */
+.hiw__header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 52px;
+  padding-top: 72px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.hiw__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #fd7a03;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  padding: 5px 16px;
+  border-radius: 9999px;
+}
+
+.hiw__label-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #fd7a03;
+  animation: hiw-pulse 2s ease-in-out infinite;
+}
+
+.hiw__title {
+  font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: #1e293b;
+  margin: 0;
+}
+
+.hiw__title-em {
+  font-style: normal;
+  color: #fd7a03;
+}
+
+.hiw__subtitle {
+  font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+  color: #6c757d;
+  line-height: 1.65;
+  max-width: 580px;
+  margin: 0;
+}
+
+/* ── Grid ────────────────────────────────────────────────── */
+.hiw__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+/* ── Card ────────────────────────────────────────────────── */
+.hiw__card {
+  background: #fffbf7;
+  border: 1.5px solid #fed7aa;
+  border-radius: 18px;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.35s ease,
+              border-color 0.35s ease;
+  animation: hiw-card-in 0.5s var(--card-delay, 0s) ease both;
+  box-shadow:
+    rgba(253,122,3,0.03) 0px 4px 12px -4px,
+    rgba(0,0,0,0.02) 0px 1px 4px;
+}
+
+.hiw__card:hover {
+  transform: translateY(-5px) scale(1.008);
+  border-color: transparent;
+  box-shadow:
+    0 0 0 1.5px var(--card-glow),
+    var(--card-glow) 0px 18px 36px -8px,
+    rgba(0,0,0,0.05) 0px 4px 12px;
+}
+
+/* Shine sweep */
+.hiw__card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.7), transparent);
+  transform: skewX(-15deg);
+  transition: none;
+}
+
+.hiw__card:hover::after {
+  animation: hiw-shine 0.7s ease forwards;
+}
+
+/* Bottom accent */
+.hiw__card-accent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--card-gradient);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hiw__card:hover .hiw__card-accent {
+  transform: scaleX(1);
+}
+
+/* Ghost number */
+.hiw__card-number {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  font-size: 3.8rem;
+  font-weight: 900;
+  line-height: 1;
+  background: var(--card-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 0.1;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.hiw__card:hover .hiw__card-number {
+  opacity: 0.2;
+  transform: scale(1.04);
+}
+
+/* Icon */
+.hiw__card-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: var(--card-gradient);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  box-shadow: var(--card-glow) 0px 5px 18px;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
+  animation: hiw-icon-float 3s ease-in-out infinite;
+}
+
+.hiw__card:hover .hiw__card-icon {
+  transform: rotate(-10deg) scale(1.12);
+  box-shadow: var(--card-glow) 0px 8px 26px;
+}
+
+.hiw__card-icon-glow {
+  position: absolute;
+  inset: -10px;
+  border-radius: 50%;
+  background: var(--card-gradient);
+  filter: blur(18px);
+  opacity: 0.3;
+  z-index: -1;
+  animation: hiw-glow-pulse 3s ease-in-out infinite;
+}
+
+/* Content */
+.hiw__card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.hiw__card-title {
+  font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: #1e293b;
+  margin: 0;
+}
+
+.hiw__card-desc {
+  font-size: 0.84rem;
+  color: #6c757d;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Features list */
+.hiw__features {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 3px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hiw__feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #1e293b;
+  line-height: 1.5;
+  opacity: 0;
+  animation: hiw-feature-in 0.35s ease forwards;
+}
+
+.hiw__feature:nth-child(1) { animation-delay: calc(var(--card-delay, 0s) + 0.25s); }
+.hiw__feature:nth-child(2) { animation-delay: calc(var(--card-delay, 0s) + 0.4s); }
+.hiw__feature:nth-child(3) { animation-delay: calc(var(--card-delay, 0s) + 0.55s); }
+
+.hiw__feature-check {
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: var(--card-gradient);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+  box-shadow: var(--card-glow) 0px 2px 5px;
+  transition: transform 0.2s ease;
+}
+
+.hiw__feature:hover .hiw__feature-check {
+  transform: scale(1.15);
+}
+
+/* ── Animations ──────────────────────────────────────────── */
+@keyframes hiw-particles {
+  from { background-position: 0 0, 0 0, 0 0, 0 0, 0 0; }
+  to   { background-position: 0 0, 0 0, 200px 200px, -220px -220px, 180px -180px; }
+}
+
+@keyframes hiw-pulse {
+  0%, 100% { opacity: 1;   transform: scale(1); }
+  50%       { opacity: 0.4; transform: scale(0.7); }
+}
+
+@keyframes hiw-card-in {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes hiw-shine {
+  from { left: -100%; }
+  to   { left: 100%; }
+}
+
+@keyframes hiw-icon-float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-4px); }
+}
+
+@keyframes hiw-glow-pulse {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(1.04); }
+}
+
+@keyframes hiw-feature-in {
+  from { opacity: 0; transform: translateX(-8px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .hiw__grid { gap: 16px; }
+}
+
+@media (max-width: 768px) {
+  .hiw { padding: 0 0 72px; }
+  .hiw__header { margin-bottom: 42px; padding-top: 60px; }
+
+  .hiw__grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .hiw__card { padding: 22px 18px; }
+  .hiw__card-number { font-size: 3.2rem; top: 12px; right: 16px; }
+  .hiw__card-icon { width: 48px; height: 48px; }
+}
+
+@media (max-width: 480px) {
+  .hiw__header { padding-top: 52px; }
+  .hiw__card { padding: 20px 16px; }
+}

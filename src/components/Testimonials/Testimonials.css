@@ -1,0 +1,297 @@
+/* ==========================================================================
+   TESTIMONIALS SECTION - INFINITE MARQUEE & HIGH DENSITY STYLES
+   ========================================================================== */
+
+.tstSection {
+  width: 100%;
+  padding: 60px 0 90px;
+  background: #fffbf7;
+  position: relative;
+  overflow: hidden;
+}
+
+.tstSection::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 15% 25%, rgba(253, 122, 3, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 85% 75%, rgba(6, 132, 188, 0.04) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+.tstStrip {
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #fd7a03 0%, #0684bc 50%, #10b981 100%);
+}
+
+/* Header Section */
+.tstHeader {
+  max-width: 720px;
+  margin: 0 auto 32px;
+  padding-top: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.tstPillTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  border: 1px solid #fed7aa;
+  background: #fff7ed;
+  color: #fd7a03;
+  font-family: 'Geist Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.tstTitle {
+  margin: 0;
+  font-family: var(--font-heading, 'Geist', sans-serif);
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -1.2px;
+  color: #1e293b;
+}
+
+.tstTitleEm {
+  font-style: italic;
+  color: #fd7a03;
+}
+
+.tstSubtitle {
+  max-width: 640px;
+  margin: 0;
+  font-family: var(--font-body, 'Geist', sans-serif);
+  font-size: clamp(1rem, 1.4vw, 1.1rem);
+  font-weight: 400;
+  line-height: 1.65;
+  color: #6c757d;
+}
+
+/* Metrics Row */
+.tstMetricsRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.tstMetricChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 18px;
+  border-radius: 9999px;
+  border: 1px solid #fed7aa;
+  background: #ffffff;
+  box-shadow: 0 4px 14px rgba(17, 17, 17, 0.03);
+}
+
+.tstMetricVal {
+  font-family: var(--font-heading, 'Geist', sans-serif);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.tstMetricLbl {
+  font-family: var(--font-body, 'Geist', sans-serif);
+  font-size: 13px;
+  color: #6c757d;
+  font-weight: 400;
+}
+
+/* Infinite Marquee Wrapper */
+.tstMarqueeWrap {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 10px 0 20px;
+  /* Soft Edge Fade Blurs */
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    #000 6%,
+    #000 94%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    #000 6%,
+    #000 94%,
+    transparent 100%
+  );
+}
+
+/* Continuous Marquee Track */
+.tstMarqueeTrack {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: tst-marquee 36s linear infinite;
+}
+
+/* Pause Marquee on Hover */
+.tstMarqueeWrap:hover .tstMarqueeTrack {
+  animation-play-state: paused;
+}
+
+/* Testimonial Card */
+.tstCard {
+  width: 360px;
+  flex-shrink: 0;
+  position: relative;
+  border-radius: 20px;
+  border: 1px solid #fed7aa;
+  background: #ffffff;
+  padding: 24px;
+  box-shadow: 0 8px 24px -6px rgba(17, 17, 17, 0.04);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  transition:
+    transform 300ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 300ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 300ms ease;
+}
+
+.tstCard:hover {
+  transform: translateY(-6px);
+  border-color: rgba(253, 122, 3, 0.4);
+  box-shadow: 0 20px 40px -12px rgba(253, 122, 3, 0.15);
+}
+
+.tstCardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+/* Highlight Badges */
+.tstBadge {
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-family: 'Geist Mono', monospace;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.tstBadge--orange { color: #fd7a03; background: #fff7ed; border: 1px solid rgba(253, 122, 3, 0.2); }
+.tstBadge--blue { color: #0684bc; background: #eff8ff; border: 1px solid rgba(6, 132, 188, 0.2); }
+.tstBadge--green { color: #10b981; background: #ecfdf5; border: 1px solid rgba(16, 185, 129, 0.2); }
+.tstBadge--purple { color: #8b5cf6; background: #f5f3ff; border: 1px solid rgba(139, 92, 246, 0.2); }
+
+.tstQuoteIcon {
+  color: #fed7aa;
+  opacity: 0.7;
+  flex-shrink: 0;
+}
+
+/* Quote Text */
+.tstQuote {
+  margin: 0;
+  font-family: var(--font-body, 'Geist', sans-serif);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.65;
+  color: #1e293b;
+}
+
+/* Footer & Author Profile */
+.tstCardFooter {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px dashed #f1f5f9;
+}
+
+.tstStars {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  color: #f59e0b;
+}
+
+.tstAuthorRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tstAvatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  color: #ffffff;
+  font-family: 'Geist Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(17, 17, 17, 0.08);
+  flex-shrink: 0;
+}
+
+.tstAuthorMeta {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.tstAuthorName {
+  font-family: var(--font-heading, 'Geist', sans-serif);
+  font-size: 14px;
+  font-weight: 500;
+  color: #1e293b;
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tstAuthorRole {
+  font-family: var(--font-body, 'Geist', sans-serif);
+  font-size: 12px;
+  color: #6c757d;
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Infinite Keyframe Animation */
+@keyframes tst-marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Responsiveness */
+@media (max-width: 640px) {
+  .tstSection { padding: 40px 0 60px; }
+  .tstHeader { padding-top: 10px; margin-bottom: 24px; }
+  .tstTitle { font-size: clamp(1.8rem, 6vw, 2.3rem); }
+  .tstMetricsRow { flex-direction: column; gap: 10px; }
+  .tstMetricChip { width: 100%; justify-content: center; }
+  .tstCard { width: 300px; padding: 20px 18px; }
+}

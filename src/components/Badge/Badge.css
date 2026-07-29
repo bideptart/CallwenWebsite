@@ -11,8 +11,8 @@
 }
 
 .badge--accent {
-  background-color: var(--color-accent-light);
-  color: var(--color-accent);
+  background-color: var(--color-accent-orange-light);
+  color: var(--color-accent-orange);
 }
 
 .badge--success {

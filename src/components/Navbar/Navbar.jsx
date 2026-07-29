@@ -28,27 +28,35 @@ export const Navbar = () => {
   return (
     <header className={`navbar-wrapper ${isScrolled ? 'navbar-wrapper--scrolled' : ''}`}>
       <div className="container navbar">
-        {/* Brand Logo - Teloz Inspired Dual Color (Blue #0684bc + Orange #fd7a03) */}
+        {/* Brand Logo — Cloud icon + Callwen.ai + BY TELOZ */}
         <Link to="/" className="navbar__brand">
-          <svg className="navbar__logo-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          {/* Cloud with upward arrow — Callwen icon */}
+          <svg className="navbar__logo-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            {/* Cloud body */}
             <path
-              d="M10 24.5C7.23858 24.5 5 22.2614 5 19.5C5 17.0645 6.74113 15.0381 9.07223 14.5959C9.02454 14.2343 9 13.8698 9 13.5C9 9.35786 12.3579 6 16.5 6C19.988 6 22.9159 8.38466 23.7533 11.6247C24.464 11.2227 25.285 11 26.1667 11C28.836 11 31 13.164 31 15.8333C31 16.4804 30.8727 17.0978 30.6416 17.6623C31.4643 18.5085 32 19.6644 32 20.9444C32 23.4604 29.9604 25.5 27.4444 25.5H10"
+              d="M12 30C8.13 30 5 26.87 5 23C5 19.48 7.55 16.56 10.93 16.07C10.98 15.72 11 15.36 11 15C11 10.03 15.03 6 20 6C24.21 6 27.77 8.82 28.74 12.7C29.46 12.25 30.31 12 31.22 12C34.42 12 37 14.58 37 17.78C37 18.49 36.87 19.17 36.62 19.8C37.99 20.91 38.89 22.58 38.89 24.44C38.89 27.76 36.2 30.44 32.89 30.44"
               stroke="#0684bc"
-              strokeWidth="2.5"
+              strokeWidth="2.2"
               strokeLinecap="round"
               strokeLinejoin="round"
             />
+            {/* Upload/call arrow */}
             <path
-              d="M14 24.5C14 20.9101 16.9101 18 20.5 18C23.0039 18 25.1633 19.4146 26.2307 21.4828M26.5 24.5C26.5 24.5 26.5 23.5 26.5 22"
+              d="M22 38V24M22 24L17 29M22 24L27 29"
               stroke="#fd7a03"
-              strokeWidth="2.5"
+              strokeWidth="2.2"
               strokeLinecap="round"
+              strokeLinejoin="round"
             />
-            <circle cx="26.5" cy="22" r="1.5" fill="#0684bc" />
           </svg>
+
+          {/* Text block: "Callwen.ai" on top, "BY TELOZ" below */}
           <span className="navbar__brand-text">
-            <span className="navbar__brand-blue">Callwen</span>
-            <span className="navbar__brand-orange">.ai</span>
+            <span className="navbar__brand-name">
+              <span className="navbar__brand-blue">Callwen</span>
+              <span className="navbar__brand-orange">.ai</span>
+            </span>
+            <span className="navbar__brand-sub">BY TELOZ</span>
           </span>
         </Link>
 

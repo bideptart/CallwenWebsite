@@ -36,19 +36,32 @@
 .navbar__brand {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   text-decoration: none;
-  font-family: var(--font-heading);
-  font-size: 1.35rem;
-  font-weight: var(--font-extrabold);
-  letter-spacing: -0.02em;
   flex-shrink: 0;
 }
 
 .navbar__logo-icon {
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
   flex-shrink: 0;
+}
+
+/* Stacked text block: "Callwen.ai" + "BY TELOZ" */
+.navbar__brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  line-height: 1;
+}
+
+.navbar__brand-name {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: var(--font-extrabold);
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: baseline;
 }
 
 .navbar__brand-blue {
@@ -57,6 +70,15 @@
 
 .navbar__brand-orange {
   color: var(--color-accent-orange); /* #fd7a03 */
+}
+
+.navbar__brand-sub {
+  font-family: var(--font-body);
+  font-size: 9px;
+  font-weight: var(--font-bold);
+  letter-spacing: 0.12em;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
 }
 
 /* ── Centered Floating Menu Pill (9278.ai style) ───────────── */

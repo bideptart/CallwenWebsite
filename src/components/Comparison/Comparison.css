@@ -1,0 +1,340 @@
+    /* ==========================================================================
+   COMPARISON SECTION - COMPACT MATRIX & 3D CARD FLIP STYLES
+   ========================================================================== */
+
+.cmpSection {
+  width: 100%;
+  padding: 50px 0 80px;
+  background: #fffbf7;
+  position: relative;
+  overflow: hidden;
+}
+
+.cmpSection::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 18% 20%, rgba(253, 122, 3, 0.04) 0%, transparent 40%),
+    radial-gradient(circle at 82% 80%, rgba(6, 132, 188, 0.04) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+.cmpStrip {
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #fd7a03 0%, #0684bc 50%, #10b981 100%);
+}
+
+/* Header Section */
+.cmpHeader {
+  max-width: 720px;
+  margin: 0 auto 32px;
+  padding-top: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.cmpPillTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  border: 1px solid #fed7aa;
+  background: #fff7ed;
+  color: #fd7a03;
+  font-family: 'Geist Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.cmpTitle {
+  margin: 0;
+  font-family: var(--font-heading, 'Geist', sans-serif);
+  font-size: clamp(2.1rem, 3.8vw, 2.75rem);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -1.2px;
+  color: #1e293b;
+}
+
+.cmpTitleEm {
+  font-style: italic;
+  color: #fd7a03;
+}
+
+.cmpSubtitle {
+  max-width: 640px;
+  margin: 0;
+  font-family: var(--font-body, 'Geist', sans-serif);
+  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+  font-weight: 400;
+  line-height: 1.6;
+  color: #6c757d;
+}
+
+/* Compact Comparison Table Matrix */
+.cmpTableCard {
+  width: 100%;
+  border-radius: 20px;
+  border: 1px solid #fed7aa;
+  background: #ffffff;
+  box-shadow: 0 10px 30px -10px rgba(17, 17, 17, 0.04);
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+.cmpTable {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.cmpTable th {
+  padding: 16px 14px;
+  background: #ffffff;
+  font-family: var(--font-heading, 'Geist', sans-serif);
+  font-size: 15px;
+  font-weight: 500;
+  color: #1e293b;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.cmpTable th:first-child {
+  text-align: left;
+  padding-left: 20px;
+  width: 25%;
+}
+
+/* Highlight Growth Column */
+.cmpTable th.cmpColGrowth,
+.cmpTable td.cmpColGrowth {
+  background: rgba(253, 122, 3, 0.04);
+  border-left: 1px solid rgba(253, 122, 3, 0.15);
+  border-right: 1px solid rgba(253, 122, 3, 0.15);
+}
+
+.cmpGrowthHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.cmpPopularTag {
+  padding: 2px 7px;
+  border-radius: 9999px;
+  background: #fd7a03;
+  color: #ffffff;
+  font-family: 'Geist Mono', monospace;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.cmpTable td {
+  padding: 12px 14px;
+  font-family: var(--font-body, 'Geist', sans-serif);
+  font-size: 13.5px;
+  color: #1e293b;
+  font-weight: 500;
+  border-bottom: 1px solid #f8fafc;
+  transition: background 200ms ease;
+}
+
+.cmpTable tr:hover td {
+  background: #fff7ed;
+}
+
+.cmpTable td.cmpFeatureName {
+  text-align: left;
+  padding-left: 20px;
+  color: #6c757d;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.cmpCheck {
+  color: #fd7a03;
+  display: inline-flex;
+}
+
+.cmpDash {
+  color: #cbd5e1;
+  display: inline-flex;
+}
+
+/* 3D Card Flip Section Below Table */
+.cmpFlipGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+/* 3D Flip Container */
+.cmpFlipContainer {
+  perspective: 1000px;
+  min-height: 220px;
+}
+
+.cmpFlipCard {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  transition: transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.cmpFlipContainer:hover .cmpFlipCard {
+  transform: rotateY(180deg);
+}
+
+/* Front & Back Card Sides */
+.cmpCardSide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  border: 1px solid #fed7aa;
+  background: #ffffff;
+  padding: 20px;
+  box-shadow: 0 8px 24px -6px rgba(17, 17, 17, 0.04);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Front Side */
+.cmpCardFront {
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+
+.cmpCardFrontTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cmpBadge {
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-family: 'Geist Mono', monospace;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.cmpBadge--orange { color: #fd7a03; background: #fff7ed; border: 1px solid rgba(253, 122, 3, 0.2); }
+.cmpBadge--blue { color: #0684bc; background: #eff8ff; border: 1px solid rgba(6, 132, 188, 0.2); }
+.cmpBadge--green { color: #10b981; background: #ecfdf5; border: 1px solid rgba(16, 185, 129, 0.2); }
+
+.cmpFlipHint {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #6c757d;
+  font-family: 'Geist Mono', monospace;
+  font-size: 10px;
+}
+
+.cmpCardFrontBody {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cmpFrontMetric {
+  font-family: var(--font-heading, 'Geist', sans-serif);
+  font-size: 28px;
+  font-weight: 500;
+  color: #1e293b;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.cmpFrontTitle {
+  font-family: var(--font-heading, 'Geist', sans-serif);
+  font-size: 15px;
+  font-weight: 500;
+  color: #1e293b;
+  margin: 4px 0 0;
+}
+
+.cmpFrontSub {
+  font-family: var(--font-body, 'Geist', sans-serif);
+  font-size: 12.5px;
+  color: #6c757d;
+  margin: 0;
+}
+
+/* Back Side (Flipped) */
+.cmpCardBack {
+  transform: rotateY(180deg);
+  background: linear-gradient(135deg, #fffbf7, #ffffff);
+  border-color: #fd7a03;
+}
+
+.cmpCardBack--blue { border-color: #0684bc; }
+.cmpCardBack--green { border-color: #10b981; }
+
+.cmpBackTitle {
+  font-family: var(--font-heading, 'Geist', sans-serif);
+  font-size: 14px;
+  font-weight: 500;
+  color: #1e293b;
+  margin: 0 0 10px;
+}
+
+.cmpBackList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cmpBackList li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body, 'Geist', sans-serif);
+  font-size: 12px;
+  font-weight: 500;
+  color: #1e293b;
+}
+
+.cmpCardBack--orange .cmpBackList svg { color: #fd7a03; }
+.cmpCardBack--blue .cmpBackList svg { color: #0684bc; }
+.cmpCardBack--green .cmpBackList svg { color: #10b981; }
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+  .cmpFlipGrid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .cmpSection { padding: 40px 0 60px; }
+  .cmpHeader { padding-top: 10px; margin-bottom: 24px; }
+  .cmpTitle { font-size: clamp(1.8rem, 6vw, 2.3rem); }
+  .cmpTable th, .cmpTable td { padding: 10px 8px; font-size: 12px; }
+  .cmpTable td.cmpFeatureName { padding-left: 10px; }
+}
